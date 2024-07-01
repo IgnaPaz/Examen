@@ -1,0 +1,17 @@
+<!-- Catalogo/templates/Catalogo/catalogo.html -->
+
+{% extends "Catalogo/base.html" %}
+
+{% block title %}Catálogo{% endblock %}
+
+{% block content %}
+<h2>Catálogo de Productos</h2>
+<ul>
+    {% for producto in productos %}
+    <li>{{ producto.nombre }} - {{ producto.precio }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'producto_create' %}">Agregar Producto</a>
+{% endblock %}
+
+

@@ -1,0 +1,23 @@
+<!-- Main/Catalogo/templates/producto_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="{% static 'path/to/bootstrap.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ producto.nombre }}</h1>
+        <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+        <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" width="300">
+        <br>
+        <a href="{% url 'producto_list' %}" class="btn btn-primary">Volver al listado</a>
+        <a href="{% url 'producto_update' producto.pk %}" class="btn btn-warning">Editar</a>
+        <form method="post" action="{% url 'producto_delete' producto.pk %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Borrar</button>
+        </form>
+    </div>
+</body>
+</html>

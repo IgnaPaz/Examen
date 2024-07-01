@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <!-- Fuente de iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <!-- CSS local -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Fuentes -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+    <title>{% block title %}I & E{% endblock %}</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="{% static 'img/img/logopag.png' %}" alt="LOGO I & E_Revista">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{% url 'index' %}">INICIO</a></li>
+                <li><a href="{% url 'novias' %}">NOVIAS</a></li>
+                <li><a href="{% url 'novios' %}">NOVIOS</a></li>
+                <li><a href="{% url 'iniciar' %}">CUENTA</a></li>
+                <li><a href="{% url 'carrito' %}">CARRITO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Carrusel de imágenes -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/arrusel/novia.1.jpg' %}" class="d-block w-100" alt=" Novia">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/carrusel/novio.1.jpg' %}" class="d-block w-100" alt="Novio">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/carrusel/pareja.1.jpg' %}" class="d-block w-100" alt="Pareja">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/carrusel/novia.2.jpg' %}" class="d-block w-100" alt="Novia">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/carrusel/novio.2.jpg' %}" class="d-block w-100" alt="Novio">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/carrusel/pareja.2.jpg' %}" class="d-block w-100" alt="Pareja">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+    <h1 id="Titulo">NUEVA COLECCIÓN PRIMAVERA VERANO 2024</h1>
+
+    <!-- Nuestros productos -->
+    <div id="confites" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-lg-center text">
+                    <h3>Nuevos Diseños</h3>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="confite-item">
+                                <a href="#"><img class="img-portfolio img-responsive" src="{% static 'img/novia.p.jpg' %}"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="confite-item">
+                                <a href="#"><img class="img-portfolio img-responsive" src="{% static 'img/novio.p.png' %}"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="confite-item">
+                                <a href="#"><img class="img-portfolio img-responsive" src="{% static 'img/novia.pp.jpg' %}"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="confite-item">
+                                <a href="#"><img class="img-portfolio img-responsive" src="{% static 'img/novio.pp.jpg' %}"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="view-more">Ver Más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="bg-custom text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="box">Información de contacto</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> 695 Av. San Carlos, Santiago</p>
+                    <p><i class="fas fa-phone"></i> (+569) 863-7593</p>
+                    <p><i class="fas fa-envelope"></i> revista.i_e@novios.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="box">Enlaces útiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'index' %}">Inicio</a></li>
+                        <li><a href="{% url 'novias' %}">Novias</a></li>
+                        <li><a href="{% url 'novios' %}">Novios</a></li>
+                        <li><a href="{% url 'iniciar' %}">Cuenta</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="box">Síguenos</h5>
+                    <div class="redes">
+                        <ul>
+                            <li><a title="facebook" href="http://facebook.com"><img
+                                        src="{% static 'img/img/icons8-fac' %}" alt="facebook"></a>
+                            </li>
+                            <li><a title="google+" href="http://google.com"><img
+                                        src="{% static 'img/img/icons8-gmail' %}" alt="google+"></a>
+                            </li>
+                            <li><a title="instagram" href="http://instagram.com"><img
+                                        src="{% static 'img/img/icons8-instagram' %}" alt="instagram"></a>
+                            </li>
+                            <li><a title="mail" href="http://gmail.com"><img
+                                        src="{% static 'img/img/icons8-gmail' %}" alt="mail"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 Mi Sitio de Vestidos de Novias y Trajes de Novios</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">
+    </script>
+    <script src="{% static 'js/carrito.js' %}" type="text/javascript"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!-- Catalogo/templates/Catalogo/base.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mi Sitio de Vestidos de Novias y Trajes de Novios{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <header>
+        <h1>Mi Sitio</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'producto_list' %}">Catálogo</a></li>
+                <li><a href="{% url 'carrito' %}">Carrito</a></li>
+                <li><a href="{% url 'iniciar' %}">Iniciar Sesión</a></li>
+                <li><a href="{% url 'registro' %}">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Mi Sitio de Vestidos de Novias y Trajes de Novios</p>
+    </footer>
+</body>
+</html>
